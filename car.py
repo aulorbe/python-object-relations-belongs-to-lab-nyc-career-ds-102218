@@ -1,4 +1,4 @@
-class Car:
+class Car():
 
     _all = []
 
@@ -60,7 +60,14 @@ class Car:
     def owner(self,owner):
         del self._owner
 
-# classmethod:
+# classmethods:
     @classmethod
     def all(cls):
         return Car._all
+
+    @classmethod
+    def cars_driven_by(cls,occupation): # class method that returns a list of car instance objects that are driven by people whose occupation is "Paper Salesperson." Example: [dwight, jim, stanley]
+        from person import Person
+        occupation_objects = list(filter(lambda i: i.occupation==occupation  ,Person._all))
+        names_object_instances = [i.name for i in occupation_objects]
+        return names_object_instances
