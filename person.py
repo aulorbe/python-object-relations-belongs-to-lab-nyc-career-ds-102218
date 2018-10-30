@@ -24,3 +24,11 @@ class Person:
         for i in Car._all:
             if i.year == oldest_year:
                 return i.owner.name
+
+    @classmethod
+    def drives_a(cls,make):
+        makes = list(filter(lambda i: i.make==make,Car._all))
+        drives_a_ = []
+        for i in makes:
+            drives_a_.append(i.owner.name)
+        return drives_a_
