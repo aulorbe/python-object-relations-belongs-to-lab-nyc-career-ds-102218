@@ -8,3 +8,59 @@ class Car:
         self._year = year
         self._owner = owner
         Car._all.append(self)
+
+#getters:
+    @property
+    def make(self):
+        return self._make
+
+    @property
+    def model(self):
+        return self._model
+
+    @property
+    def year(self):
+        return self._year
+
+    @property
+    def owner(self):
+        return self._owner
+
+#setters:
+    @make.setter
+    def make(self,make):
+        self._make = make
+
+    @model.setter
+    def model(self,model):
+        self._model = model
+
+    @year.setter
+    def year(self,year):
+        self._year = year
+
+    @owner.setter
+    def owner(self,owner):
+        self._owner = owner
+
+#deleters:
+    @make.deleter
+    def make(self,make):
+        del self._make
+
+    @model.deleter
+    def model(self,model):
+        del self._model
+
+    @year.deleter
+    def year(self,year):
+        del self._year
+
+    @owner.deleter
+    def owner(self,owner):
+        del self._owner
+
+# classmethod:
+    @classmethod
+    def all(cls):
+        return Car._all
